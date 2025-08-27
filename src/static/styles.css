@@ -102,18 +102,26 @@ section h3 {
 
 /* Remove the bullet point pseudo-element */
 .participants-section ul li::before {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
 }
 
-.participant-email {
-  flex-grow: 1;
-  margin-right: 8px;
+@media (min-width: 768px) {
+  main {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #signup-container {
+    max-width: 350px;
+    margin-right: 40px;
+  }
+  #activities-container {
+    max-width: 600px;
+  }
 }
-
-.delete-btn {
-  background: none;
-  border: none;
-  color: #c62828;
   cursor: pointer;
   font-size: 14px;
   padding: 2px 5px;
@@ -136,11 +144,30 @@ section h3 {
 
 .form-group label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+.signup-btn {
+  margin-top: 12px;
+  background-color: #3949ab;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.form-group input,
+.signup-btn:hover {
+  background-color: #1a237e;
+}
 .form-group select {
   width: 100%;
   padding: 10px;
